@@ -1,0 +1,12 @@
+<h1>Edit Story</h1>
+
+<!-- <%= render "stories/form" %> -->
+<%= render "layouts/errors", :object => @story %>
+
+<%= form_for @story do |f| %>
+  <%= f.label :"Add to story" %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
+
+<p><%= link_to "Return to story", story_path %></p>

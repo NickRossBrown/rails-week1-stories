@@ -13,11 +13,17 @@ class StoriesController < ApplicationController
   end
 
   def edit
-
+    @story = Story.find(params[:id])
   end
 
   def update
+    @story= Story.find(params[:id])
 
+    if @story.description
+      redirect_to story_path
+    else
+      render :edit
+    end
   end
 
   def create
@@ -30,7 +36,9 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-
+    @story = Story.find(params[:id])
+    @story.destroy
+    redirect_to stories_path
   end
 
 private
