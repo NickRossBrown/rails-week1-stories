@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
 
   def index
+    binding.pry
     # @stories = Story.all
   end
 
