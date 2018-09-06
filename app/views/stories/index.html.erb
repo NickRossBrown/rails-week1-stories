@@ -10,3 +10,13 @@
 <hr>
 
 <%= link_to "Create a new story", new_story_path %>
+
+<hr>
+
+<h3>Stories with the most chapers </h3>
+
+<ol>
+  <% @stories.most_chapters.each do |story| %>
+    <li><%= story.title %></li>
+  <% end %>
+</ol>

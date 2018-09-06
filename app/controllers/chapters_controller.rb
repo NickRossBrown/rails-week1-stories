@@ -1,8 +1,10 @@
 class ChaptersController < ApplicationController
 
   def new
+
     @story = Story.find(params[:story_id])
     @chapter = @story.chapters.new
+    user = User.all
   end
 
   def create
