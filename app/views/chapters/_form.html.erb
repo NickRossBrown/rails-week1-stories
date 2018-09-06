@@ -2,9 +2,9 @@
 
 <%= form_for [@story, @chapter] do |f| %>
   <%= f.label :description %>
-  <%= f.collection_select :story_id, User.order(:name), :id, :name %>
-
-
-
+  <%= f.collection_select :description, User.all, :name, :name %>
   <p><%= f.submit %></p>
 <% end %>
+
+
+<p><%= link_to "Return to stories", stories_path %></p>
