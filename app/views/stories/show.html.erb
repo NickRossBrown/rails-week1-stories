@@ -10,8 +10,8 @@
     <% @story.chapters.each do |chapter| %>
     <li>
       <%= chapter.description %> |
-      <%= link_to "Edit", edit_story_chapter_path(@story, chapter) %> |
-      <%= link_to "Delete", story_chapter_path(@story, chapter),
+      <%= link_to "Edit (not yet working)", edit_story_chapter_path(@story, chapter) %> |
+      <%= link_to "Delete (not yet working)", story_chapter_path(@story, chapter),
                            :data => {:confirm => "Are you sure?",
                                           :method => "delete"} %>
     </li>
@@ -24,7 +24,7 @@
 
 
 
-<p><%= link_to "Add to Story", new_story_chapter_path(@story) %></p>
+<p><%= link_to "Add to Chapter (not yet working)", new_story_chapter_path(@story)%></p>
 
 <p>  |
 <%= link_to "Delete", story_path(@story),
