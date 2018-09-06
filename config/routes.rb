@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :home, :only => [:index]
 
-  resources :stories
+  resources :stories do
+    resources :chapters
+  end
 
 end

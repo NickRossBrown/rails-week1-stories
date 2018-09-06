@@ -3,10 +3,28 @@
 
 <h3><%=@story.description %></h3>
 
-<p><%= link_to "Add to Story", edit_story_path(@story) %></p>
+<% if @story.chapters %>
+  <h4>Chapters to this story:</h4>
+
+  <ul>
+    <% @story.chapters.each do |chapter| %>
+    <li>
+      <%= chapter.description %> |
+      <%= link_to "Edit", edit_story_chapter_path(@story, chapter) %> |
+      <%= link_to "Delete", story_chapter_path(@story, chapter),
+                           :data => {:confirm => "Are you sure?",
+                                          :method => "delete"} %>
+    </li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <p>There are no chapters for this story, please write one</p>
+<% end %>
 
 
 
+<p><%= link_to "Add to Story", new_story_chapter_path(@story) %></p>
 
 <p>  |
 <%= link_to "Delete", story_path(@story),
