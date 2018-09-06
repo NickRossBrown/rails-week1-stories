@@ -2,7 +2,7 @@
 <h1>Stories</h1>
 
 <ol>
-  <% @stories.each do |story| %>
+  <% @stories.five_most_recent.each do |story| %>
     <li><%= link_to story.title, story_path(story) %></li>
   <% end %>
 </ol>

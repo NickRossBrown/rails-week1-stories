@@ -1,7 +1,6 @@
 class ChaptersController < ApplicationController
 
   def new
-    binding.pry
     @story = Story.find(params[:story_id])
     @chapter = @story.chapters.new
   end
